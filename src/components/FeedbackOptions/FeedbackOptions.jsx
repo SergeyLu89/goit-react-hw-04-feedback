@@ -1,21 +1,21 @@
 import css from './FeedbackOptions.module.css';
 
-export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
+export const FeedbackOptions = ({ names, onLeaveFeedback }) => {
   return (
     <div>
       <ul className={css.feedbackBtnList}>
-        {options.map(option => {
+        {names.map(name => {
           return (
-            <li key={option}>
+            <li key={name}>
               <button
                 type="button"
-                name={option}
+                name={name}
                 className={css.feedbackBtn}
                 onClick={() => {
-                  onLeaveFeedback(option);
+                  onLeaveFeedback(name);
                 }}
               >
-                {option.toUpperCase()}
+                {name.toUpperCase()}
               </button>
             </li>
           );
